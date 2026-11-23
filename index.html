@@ -3,46 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Perkalian &amp; Pembagian Dasar</title>
+  <title>Perkalian & Pembagian Dasar</title>
   <meta name="description" content="Belajar perkalian dan pembagian dasar secara interaktif.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✖️</text></svg>">
   <style>
-    :root { --bg: #f5f7fb; --fg: #1f2937; --accent: #2563eb; }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #111827; --fg: #e5e7eb; --accent: #60a5fa; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #f5f7fb;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; background: var(--bg); color: var(--fg);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-    #app { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; background: #fff; }
-    #loading { position: fixed; inset: 0; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 14px; background: var(--bg);
-      transition: opacity .3s; z-index: 2; }
-    #loading.hide { opacity: 0; pointer-events: none; }
-    .spinner { width: 40px; height: 40px; border: 4px solid rgba(128,128,128,.3);
-      border-top-color: var(--accent); border-radius: 50%; animation: spin .9s linear infinite; }
+    iframe {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: #475569;
+      z-index: 0;
+    }
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 4px solid #cbd5e1;
+      border-top-color: #3b82f6;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
     @keyframes spin { to { transform: rotate(360deg); } }
-    a.fallback { color: var(--accent); font-size: 14px; }
+    #fallback { font-size: 14px; }
+    #fallback a { color: #2563eb; }
   </style>
 </head>
 <body>
   <div id="loading">
     <div class="spinner"></div>
-    <div>Memuat Perkalian &amp; Pembagian Dasar…</div>
-    <a class="fallback" href="https://script.google.com/macros/s/AKfycbxXi7waJB2ZMeheiXaEj6uyDhRo9So1Ne_03ylJyBKR7Ac2Culg4V--1s-_u7GjPQ7mmw/exec" target="_blank" rel="noopener">Buka langsung jika tidak muncul</a>
+    <div>Memuat aplikasi…</div>
+    <div id="fallback">
+      Tidak muncul? <a href="https://script.google.com/macros/s/AKfycbxXi7waJB2ZMeheiXaEj6uyDhRo9So1Ne_03ylJyBKR7Ac2Culg4V--1s-_u7GjPQ7mmw/exec" target="_blank" rel="noopener">Buka langsung di tab baru</a>
+    </div>
   </div>
 
   <iframe
-    id="app"
-    title="Perkalian dan Pembagian Dasar"
     src="https://script.google.com/macros/s/AKfycbxXi7waJB2ZMeheiXaEj6uyDhRo9So1Ne_03ylJyBKR7Ac2Culg4V--1s-_u7GjPQ7mmw/exec"
-    allow="fullscreen"
-    referrerpolicy="no-referrer"></iframe>
-
-  <script>
-    document.getElementById('app').addEventListener('load', function () {
-      document.getElementById('loading').classList.add('hide');
-    });
-  </script>
+    title="Perkalian & Pembagian Dasar"
+    allowfullscreen>
+  </iframe>
 </body>
 </html>
